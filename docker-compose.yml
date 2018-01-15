@@ -1,0 +1,13 @@
+version: '3'
+services:
+  node:
+    build: .
+    volumes:
+      - .:/app
+    networks:
+      - chiccocoin
+    ports:
+      - "3000:3000"
+
+networks: 
+  chiccocoin:
