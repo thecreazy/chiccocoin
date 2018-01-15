@@ -1,6 +1,6 @@
 const crypto = require('crypto')
 
-export default class Chiccocoin {
+class Blockchain {
   constructor () {
     // Create chain and transaction
     this.chain = []
@@ -31,9 +31,9 @@ export default class Chiccocoin {
 
   newTransaction (sender, recipient, amount) {
     this.current_transactions.push({
-      'sender': sender,
-      'recipient': recipient,
-      'amount': amount
+      sender: sender,
+      recipient: recipient,
+      amount: amount
     })
     return this.lastBlock['index'] + 1
   }
@@ -70,3 +70,5 @@ export default class Chiccocoin {
     return this.chain.slice(-1)[0]
   }
 }
+
+module.exports= Blockchain
