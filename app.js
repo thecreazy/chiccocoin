@@ -4,6 +4,9 @@ const logger = require('morgan')
 const cookieParser = require('cookie-parser')
 const bodyParser = require('body-parser')
 
+// Get enviroment in the .env
+require('dotenv').config()
+
 const index = require('./routes/index')
 
 const app = express()
