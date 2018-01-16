@@ -12,7 +12,7 @@ class Blockchain {
     this.lastBlock = this.lastBlock.bind(this)
     this.proofOfWork = this.proofOfWork.bind(this)
 
-    // Mining  the genesis blocl
+    // Mining  the genesis block
     this.newBlock(100, 1)
   }
 
@@ -51,7 +51,7 @@ class Blockchain {
     const guessHash = crypto.createHmac(process.env.HASH_TYPE, process.env.CRYPTO_SECRET)
     .update(`${lastProof}${proof}`)
     .digest('hex')
-    return guessHash.substr(0, 5) === process.env.START_HASH
+    return guessHash.substr(0, 5) === process.env.RESOLUTION_HASH
   }
 
   proofOfWork (lastProof) {
@@ -71,4 +71,4 @@ class Blockchain {
   }
 }
 
-module.exports= Blockchain
+module.exports = Blockchain
