@@ -9,6 +9,11 @@
     "dev:build": "docker-compose up --build",
     "test": "mocha --timeout 15000000"
   },
+  "standard": {
+    "ignore": [
+      "/test/*.js"
+    ]
+  },  
   "dependencies": {
     "body-parser": "~1.18.2",
     "cookie-parser": "~1.4.3",
