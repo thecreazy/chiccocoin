@@ -1,0 +1,82 @@
+{
+	"info": {
+		"name": "Chiccocoin",
+		"_postman_id": "bcb5ea5e-63ec-8065-2a6d-3e0d2b555ef7",
+		"description": "Collection of API request to test the Chiccocoin blockchain\n",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Chain",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:3000/chain",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"chain"
+					]
+				},
+				"description": "Get the actual Chain"
+			},
+			"response": []
+		},
+		{
+			"name": "Mine",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:3000/mine",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"mine"
+					]
+				},
+				"description": "Mine a new Chiccocoin "
+			},
+			"response": []
+		},
+		{
+			"name": "New Transaction",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n \"sender\":\"sender1\",\n \"recipient\": \"sender2\",\n \"amount\": 1\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/transactions/new",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"transactions",
+						"new"
+					]
+				},
+				"description": "Add a transaction to the next mine\n"
+			},
+			"response": []
+		}
+	]
+}
