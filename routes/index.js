@@ -1,5 +1,6 @@
 const express = require('express')
 const router = express.Router()
+const { check } = require('express-validator/check')
 
 const Chiccocoin = require('../middleware/chiccocoin')
 
@@ -11,11 +12,14 @@ router.get('/', function (req, res, next) {
   res.render('index', { title: 'Chicco Coin' })
 })
 
-router.post('/transactions/new')
+router.post('/transactions/new', [
+  check('sender', 'Sender must be a String').exists(),
+  check('recipient', 'Sender must be a String').exists(),
+  check('amount', 'Sender must be a Int Value').isInt().exists()
+], Chiccocoin.newTransaction, responseMiddleware)
 
 router.get('/mine', Chiccocoin.mine, responseMiddleware)
 
 router.get('/chain', Chiccocoin.getChain, responseMiddleware)
 
 module.exports = router
-

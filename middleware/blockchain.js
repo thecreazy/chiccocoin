@@ -35,7 +35,7 @@ class Blockchain {
       recipient: recipient,
       amount: amount
     })
-    return this.lastBlock['index'] + 1
+    return this.lastBlock()['index'] + 1
   }
 
   hash (block) {
