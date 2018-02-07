@@ -8,6 +8,10 @@
 
 [![forthebadge](http://forthebadge.com/badges/built-with-love.svg)](http://forthebadge.com) [![forthebadge](http://forthebadge.com/badges/contains-cat-gifs.svg)](http://forthebadge.com)
 
+## WHY
+
+I created this repo for my article on medium: [https://developers.caffeina.com/chiccocoin-learn-what-is-a-blockchain-by-creating-one-in-nodejs](https://developers.caffeina.com/chiccocoin-learn-what-is-a-blockchain-by-creating-one-in-nodejs-12929a89208b)
+
 ## Installation
 
 Make sure you have installated nodejs 9.x on your machine
