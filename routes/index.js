@@ -22,4 +22,6 @@ router.get('/mine', Chiccocoin.mine, responseMiddleware)
 
 router.get('/chain', Chiccocoin.getChain, responseMiddleware)
 
+router.get('/state', Chiccocoin.getState, responseMiddleware)
+
 module.exports = router

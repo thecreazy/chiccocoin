@@ -15,6 +15,15 @@ describe('Chiccocoin API', () => {
 
     })
   })
+  describe('/getState', () => {
+    it('Should return empty state from genesis block', () => {
+      const req = {}
+      Chiccocoin.getState(req, {}, () => {
+        const state = req.responseValue.state
+        assert.deepEqual(state, {})
+      })
+    })
+  })
   describe('/mine', () => {
     it('Should mine a new block to add into the chain', () => {
       const req = {}
