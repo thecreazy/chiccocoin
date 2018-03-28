@@ -20,21 +20,19 @@ class Chiccocoin {
 
   getState (req, res, next) {
     const transactions = this.blockchain.chain.reduce(
-      (transactions, currentBlock) => 
+      (transactions, currentBlock) =>
         transactions.concat(currentBlock.transactions),
       []
     )
 
-    let state = {};
+    let state = {}
     transactions.forEach((tx) => {
-      if(state[tx.sender] === undefined)
-        state[tx.sender] = 0;
+      if (state[tx.sender] === undefined) { state[tx.sender] = 0 }
 
-      if(state[tx.recipient] === undefined)
-        state[tx.recipient] = 0;
+      if (state[tx.recipient] === undefined) { state[tx.recipient] = 0 }
 
-      state[tx.sender] -= tx.amount;
-      state[tx.recipient] += tx.amount;
+      state[tx.sender] -= tx.amount
+      state[tx.recipient] += tx.amount
     })
 
     req.responseValue = {
@@ -42,7 +40,7 @@ class Chiccocoin {
       state: state
     }
 
-    return next();
+    return next()
   }
 
   mine (req, res, next) {
