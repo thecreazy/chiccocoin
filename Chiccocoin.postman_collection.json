@@ -28,6 +28,27 @@
 			"response": []
 		},
 		{
+			"name": "State",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:3000/state",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"state"
+					]
+				},
+				"description": "Get the actual State"
+			},
+			"response": []
+		},
+		{
 			"name": "Mine",
 			"request": {
 				"method": "GET",
