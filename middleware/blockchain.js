@@ -5,6 +5,7 @@ class Blockchain {
     // Create chain and transaction
     this.chain = []
     this.current_transactions = []
+    this.nodes = []
 
     // Binding of this
     this.newBlock = this.newBlock.bind(this)
@@ -68,6 +69,34 @@ class Blockchain {
 
   lastBlock () {
     return this.chain.slice(-1)[0]
+  }
+
+  registerNode(address){
+    this.nodes.push(address)
+    return this.nodes
+  }
+
+  validChain(chain){
+    let lastBlock
+    let isValid = true
+    chain.forEach((block,index) => {
+      if(!!index){
+        lastBlock = block
+        return
+      }
+      console.log(`lastBlock`, lastBlock)
+      console.log(`block`, block)
+      // Check that the hash of the block is correct
+      if(block['previous_hash'] != this.hash(last_block)){
+        isValid = false
+      }
+      // Check that the Proof of Work is correct
+      if(this.validProof(lastBlock.proof, block.proof)){
+        isValid = false
+      }
+      lastBlock = block
+    });
+    return isValid
   }
 }
 
