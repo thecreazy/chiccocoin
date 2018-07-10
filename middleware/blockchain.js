@@ -71,31 +71,31 @@ class Blockchain {
     return this.chain.slice(-1)[0]
   }
 
-  registerNode(address){
+  registerNode (address) {
     this.nodes.push(address)
     return this.nodes
   }
 
-  validChain(chain){
+  validChain (chain) {
     let lastBlock
     let isValid = true
-    chain.forEach((block,index) => {
-      if(!!index){
+    chain.forEach((block, index) => {
+      if (index) {
         lastBlock = block
         return
       }
       console.log(`lastBlock`, lastBlock)
       console.log(`block`, block)
       // Check that the hash of the block is correct
-      if(block['previous_hash'] != this.hash(last_block)){
+      if (block['previous_hash'] !== this.hash(lastBlock)) {
         isValid = false
       }
       // Check that the Proof of Work is correct
-      if(this.validProof(lastBlock.proof, block.proof)){
+      if (this.validProof(lastBlock.proof, block.proof)) {
         isValid = false
       }
       lastBlock = block
-    });
+    })
     return isValid
   }
 }

@@ -50,7 +50,7 @@ class Chiccocoin {
     return next()
   }
 
-  addNode(req,res,next){
+  addNode (req, res, next) {
     const nodes = this.blockchain.registerNode(req.body.node)
     req.responseValue = {
       message: `New node have been added`,

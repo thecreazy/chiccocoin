@@ -22,8 +22,8 @@ router.get('/mine', Chiccocoin.mine, responseMiddleware)
 
 router.get('/chain', Chiccocoin.getChain, responseMiddleware)
 
-router.post('/node/register',[
-  check('node', 'Node must be a String').exists(),
+router.post('/node/register', [
+  check('node', 'Node must be a String').exists()
 ], Chiccocoin.addNode, responseMiddleware)
 
 module.exports = router
